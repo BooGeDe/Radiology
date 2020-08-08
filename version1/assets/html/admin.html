@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="styleHome.css" />
+  </head>
+  <body>
+    <div class="Wrapper">
+      <!--navigation Bar -->
+      <div class="topNav">
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <di class="topMenu">
+          <div class="logo">
+            <label>Technician</label>
+          </div>
+          <ul>
+            <li id="notif">
+              <a href="#"><i class="fas fa-bell"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-user"></i></a>
+            </li>
+          </ul>
+      
+      </div>
+      <div class="sideBar">
+        <ul>
+          <li>
+            <a href="#" id="homeBtn" class="active">
+              <span class="icon"><i class="fas fa-home"></i></span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hospital">
+              <span class="icon"><i class="fas fa-hospital"></i></span>
+              <span class="title">Hospital</span>
+              <span class="down">
+                <i class="fas fa-angle-right toggle-submenu"></i></span>
+            </a>
+            <ul class="subMenu">
+              <li><span>Upload Studies</span></li>
+              <li><span>Finished Studies</span></li>
+              <li><span>All Studies</span></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" id="statisticsBtn">
+              <span class="icon"><i class="far fa-chart-bar"></i></span>
+              <span class="title">Statistics</span>
+            </a>
+          </li>
+          <li class="review">
+            <a href="#">
+              <span class="icon"><i class="fas fa-file-archive"></i></span>
+              <span class="title">Review Studies</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--<div class="load">
+        <div class="container">
+          <div class="red"></div>
+          <div class="yellow"></div>
+          <div class="green"></div>
+          <div class="blue"></div>
+        </div>
+      </div>-->
+      <div class="main_container">
+        <div class="Notification">
+          <div>
+            <h3>Notifications</h3>
+          </div>
+          <ul>
+            <li><i class="fas fa-bell"></i>this a notification</li>
+            <li><i class="fas fa-bell"></i>this is another notification</li>
+            <li><i class="fas fa-bell"></i>this is the last one b3on ellah</li>
+            <li><i class="fas fa-bell"></i>this is the last one brgola</li>
+            <li><i class="fas fa-bell"></i>this is the last one 3shan mfesh mkan</li>
+          </ul>
+          <div>
+            <h5>Show All Notifications</h5>
+          </div>
+        </div>
+        <div class="statistics">
+          <div id="patients" class="statBox">
+                <span class="title">Patients</span>
+                <i class="fas fa-user-injured"></i>
+                <span class="number">2,093</span>
+          </div>
+          <div id="reports" class="statBox">
+            <span class="title">Reports</span>
+                <i class="fas fa-file-alt"></i>
+                <span class="number">3,100</span>
+          </div>
+          <div id="doctors" class="statBox"></div>
+          <div id="rab3" class="statBox"></div>
+        </div>
+        <div class="searchAndFilter"> 
+          <button class="btn" id="filter">Filter</button>
+         <div class="filterContainer">
+          <div> <label>Study Status : </label><select class="combo" id="studiesStatusCombo">
+            <option>All Studies</option>
+            <option>Completed</option>
+            <option>Uploading</option>
+            <option>InProgress</option>
+            <option>Invalid</option>
+           </select>
+          </div>
+          <div>
+           <label> Anatomy : </label><select class="combo" id="Gender">
+            <option>Chest</option>
+            <option>Stomach</option>
+            <option>Head</option>
+           </select>
+          </div>
+          <div>           
+           <label> Modality : </label><select class="combo" id="Gender">
+            <option>MR</option>
+            <option>CT</option>
+            <option>X-ray</option>
+           </select>
+          </div>
+          <div>
+           <label> Date :</label>
+           <div>
+             <label> From :</label>
+           <input type="date" value="2020-01-01">
+          </div>
+          <div>
+            <label> To :</label>
+          <input type="date" value="2020-01-01">
+         </div>
+          </div>
+        </div>
+        
+        </div>
+        <table id="studiesTable">
+          <thead>
+            <tr> <th colspan="8" id="title"><span id="category">All Studies</span><span id="count-display">-</span> 
+              <div class="searchContainer"> <input type="text" placeholder="Enter Search Text" id="searchBar"> <i class="fas fa-search"></i></div>
+             </th> </tr>
+              <tr id="headers">
+                      <th style="width: 10%;">Patient ID</th>
+                      <th style="width: 30%;">Patient Name</th>
+                      <th style="width: 5%;">Gender</th>
+                      <th style="width: 10%;">Modality</th>
+                      <th style="width: 10%;">Anatomy</th>
+                      <th style="width: 10%;">Status</th>
+                      <th style="width: 15%;">Date</th>
+                      <th style="width: 10%;">Report</th>
+                </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>112</td>
+              <td>Omar</td>
+              <td>Male</td>
+              <td>54</td>
+              <td>Chest</td>
+              <td class="status">Completed</td>
+              <td>--</td>
+              <td>download report</td>
+            </tr>
+            <tr>
+              <td>113</td>
+              <td>Amr</td>
+              <td>Male</td>
+              <td>30</td>
+              <td>Head</td>
+              <td class="status">Uploading</td>
+              <td>--</td>
+              <td>No report Available</td>
+            </tr>
+            <tr>
+              <td>114</td>
+              <td>Nadia</td>
+              <td>Female</td>
+              <td>25</td>
+              <td>Chest</td>
+              <td class="status">inProgress</td>
+              <td>--</td>
+              <td>No Report Available</td>
+            </tr>
+            <tr>
+              <td>115</td>
+              <td>Noha</td>
+              <td>Female</td>
+              <td>38</td>
+              <td>Stomach</td>
+              <td class="status">Invalid</td>
+              <td>--</td>
+              <td>Mo Report Available</td>
+            </tr>
+           </tr>
+           <tr>
+            <td>112</td>
+            <td>Omar khaled</td>
+            <td>Male</td>
+            <td>54</td>
+            <td>Chest</td>
+            <td class="status">Completed</td>
+            <td>--</td>
+            <td>download report</td>
+          </tr>
+          <tr>
+            <td>113</td>
+            <td>Amr</td>
+            <td>Male</td>
+            <td>30</td>
+            <td>Head</td>
+            <td class="status">Completed</td>
+            <td>--</td>
+            <td>download report</td>
+          </tr>
+          <tr>
+            <td>114</td>
+            <td>Nadia</td>
+            <td>Female</td>
+            <td>25</td>
+            <td>Chest</td>
+            <td class="status">Invalid</td>
+            <td>--</td>
+            <td>No Report Available</td>
+          </tr>
+          <tr>
+            <td>115</td>
+            <td>Noha</td>
+            <td>Female</td>
+            <td>38</td>
+            <td>Stomach</td>
+            <td class="status">Invalid</td>
+            <td>--</td>
+            <td>Mo Report Available</td>
+          </tr>
+         </tr>
+         <tr>
+          <td>112</td>
+          <td>Omar Kamal</td>
+          <td>Male</td>
+          <td>54</td>
+          <td>Chest</td>
+          <td class="status">Completed</td>
+          <td>--</td>
+          <td>download report</td>
+        </tr>
+        <tr>
+          <td>113</td>
+          <td>Amr</td>
+          <td>Male</td>
+          <td>30</td>
+          <td>Head</td>
+          <td class="status">Uploading</td>
+          <td>--</td>
+          <td>No report Available</td>
+        </tr>
+        <tr>
+          <td>114</td>
+          <td>Nadia</td>
+          <td>Female</td>
+          <td>25</td>
+          <td>Chest</td>
+          <td class="status">inProgress</td>
+          <td>--</td>
+          <td>No Report Available</td>
+        </tr>
+        <tr>
+          <td>115</td>
+          <td>Noha</td>
+          <td>Female</td>
+          <td>38</td>
+          <td>Stomach</td>
+          <td class="status">Invalid</td>
+          <td>--</td>
+          <td>Mo Report Available</td>
+        </tr>
+       </tr>
+          </tbody>
+        </table>
+        <div class="warning">
+          <p><strong>Oops !</strong> No results found</p>
+        </div>
+        <div id="snackbar"> Downloading report</div>
+        <div id="overlay">
+
+          <div id="text">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>No Report Available<br> try Again Later</span>
+            <button class="btn" onclick="off()"> Okay</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+    init();
+      $(document).ready(function() {
+        
+        $("#filter").click(function(){
+            $(".filterContainer").slideToggle();
+            
+        });
+        
+        clickTable();
+  
+        $("#notif").on('click',function()
+        {
+          $(".Notification").slideToggle();
+        });
+
+        $(".hamburger").click(function(){
+          if($(".subMenu").is(":Visible"))
+          {
+            subMenuUp();
+            $(".Wrapper").toggleClass("collapse");
+          }
+          else
+          {
+          $(".Wrapper").toggleClass("collapse");
+                }  
+          });
+          
+            
+        $("#homeBtn").click(function()
+        {
+          showAndGrow();
+          setTimeout(function(){$(".searchAndFilter").css("display", "flex");
+          $("#studiesTable").css("display", "inline-table");},500);
+
+        });
+        $("#statisticsBtn").click(function()
+        {
+          hideAndSlide();
+          setTimeout(function(){$(".searchAndFilter").css("display", "none");
+          $("#studiesTable").css("display", "none");},500);
+        });
+        $(".toggle-submenu").click(function() {
+          subMenuUp();
+        });
+      });
+
+      // function to slide and hide table , search And Filter
+        function hideAndSlide()
+          {
+          $(".searchAndFilter").removeClass("showAndGrow");
+          $(".searchAndFilter").addClass("hideAndSlide");
+          $("#studiesTable").removeClass("showAndGrow");
+          $("#studiesTable").addClass("hideAndSlide");
+          
+          }
+      // function to show and grow  table , search And Filter
+      function showAndGrow()
+      {
+        
+          $(".searchAndFilter").addClass("showAndGrow");
+          $(".searchAndFilter").removeClass("hideAndSlide");
+          $("#studiesTable").addClass("showAndGrow");
+          $("#studiesTable").removeClass("hideAndSlide");
+      }
+// function to slide sub menu
+
+      function subMenuUp()
+      {
+        $(".toggle-submenu").toggleClass("downa");
+            $(".subMenu").slideToggle();
+      };
+      // function to make table clickable and display a snak bar msg
+      function clickTable()
+        {
+          $("table tbody tr").on('click',function()
+          { 
+            
+            if(this.children[5].innerText==="Completed")
+            {
+              var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            }
+            else
+            {
+              on();
+            }
+          });
+        }
+        function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+//function to color status cell
+function statusColor ()
+{
+  var statusColor = document.querySelectorAll("table tbody td");
+  for(i=0; i<statusColor.length;i++)
+  {
+    if (statusColor[i].innerHTML==="Completed")
+    {
+      statusColor[i].style.backgroundColor="#28a745";
+          statusColor[i].style.color="#fff";
+    }
+    
+    else if (statusColor[i].innerHTML === "Invalid")
+        {
+          statusColor[i].style.backgroundColor="#dc3545";
+          statusColor[i].style.color="#fff";
+        }
+        else if (statusColor[i].innerHTML === "inProgress")
+        {
+          statusColor[i].style.backgroundColor="#ffc107";
+          statusColor[i].style.color="#fff";
+        }
+        else{
+          
+        }
+  }
+
+}
+var noResult = document.querySelector(".warning");
+
+//get all original Table Data
+function tableData ()
+{
+  var searchData = [];
+  var tableRows = document.querySelectorAll("table tbody tr");
+  
+  Array.from(tableRows).forEach(_bodyRowEl =>
+   {searchData.push(Array.from(_bodyRowEl.children)
+    .map(_cellEl => {return _cellEl.innerHTML;}
+    ));
+  });
+    return searchData;
+  }
+
+//takes search text and create new data table array
+function search(arr,searchText)
+{     
+      if (!searchText) return arr;
+         return arr.filter(_row => {
+        return _row.find(_text => _text.toLowerCase().includes(searchText.toLowerCase()));
+      });
+}
+
+//takes data table array and create rows and cells
+function refreshTableData (data) 
+{ 
+  
+  var tabelBody = document.querySelector("table tbody");
+  tabelBody.innerHTML = '';
+
+  data.forEach(_row => {
+    var currentRow = document.createElement("tr");
+    _row.forEach(_dataItme => {
+      var currentCell = document.createElement("td");
+      currentCell.innerText = _dataItme;
+      currentRow.appendChild(currentCell);
+    });
+    tabelBody.appendChild(currentRow);
+  })
+  clickTable();
+}
+
+
+//initialization function
+function init()
+{
+  $(".filterContainer").slideToggle();
+  statusColor();
+  var initialTableData = tableData();
+  var resultTableData = tableData();
+  var countDisplay = document.getElementById("count-display");
+  countDisplay.textContent=tableData().length;
+  var status = document.getElementById("category");  
+
+  
+//search bar event
+$("#searchBar").on("keyup", function()
+{
+  
+  refreshTableData(search(resultTableData, this.value));
+  countDisplay.textContent=tableData().length;
+  statusColor();
+  if (tableData().length == 0 ) {
+    noResult.style.display="block";
+
+    } else {
+      noResult.style.display="none";
+
+    }
+})
+var categoryBox = document.querySelector("#studiesStatusCombo");
+categoryBox.addEventListener('change',function()
+{
+  
+  if (this.selectedIndex==0)
+  {
+    refreshTableData(search(initialTableData , ));
+    resultTableData=search(initialTableData,);
+    countDisplay.textContent=tableData().length;
+    category.textContent=this.value;
+    statusColor();
+    
+  }
+  else{
+  refreshTableData(search(initialTableData,this.value));
+  resultTableData=search(initialTableData,this.value);
+  countDisplay.textContent=tableData().length;
+  category.textContent=this.value;
+  statusColor();
+  }
+})
+
+}
+
+
+
+//function to put active class
+    </script>
+  </body>
+</html>

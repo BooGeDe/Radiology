@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="\assets\css\homeStyle.css" />
+  </head>
+  <body>
+    <div class="Wrapper">
+      <!--navigation Bar -->
+      <div class="topNav">
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <di class="topMenu">
+          <div class="logo">
+            <label>Technician</label>
+          </div>
+          <ul>
+            <li id="notif">
+              <a href="#"><i class="fas fa-bell"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-user"></i></a>
+            </li>
+          </ul>
+      
+      </div>
+      <div class="sideBar">
+        <ul>
+          <li>
+            <a href="#" id="homeBtn" class="active">
+              <span class="icon"><i class="fas fa-home"></i></span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hospital">
+              <span class="icon"><i class="fas fa-hospital"></i></span>
+              <span class="title">Hospital</span>
+              <span class="down">
+                <i class="fas fa-angle-right toggle-submenu"></i></span>
+            </a>
+            <ul class="subMenu">
+              <li><span>Upload Studies</span></li>
+              <li><span>Finished Studies</span></li>
+              <li><span>All Studies</span></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" id="statisticsBtn">
+              <span class="icon"><i class="far fa-chart-bar"></i></span>
+              <span class="title">Statistics</span>
+            </a>
+          </li>
+          <li class="review">
+            <a href="#">
+              <span class="icon"><i class="fas fa-file-archive"></i></span>
+              <span class="title">Review Studies</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main_container">
+        <div class="Notification">
+          <div>
+            <h3>Notifications</h3>
+          </div>
+          <ul>
+            <li><i class="fas fa-bell"></i>this a notification</li>
+            <li><i class="fas fa-bell"></i>this is another notification</li>
+            <li><i class="fas fa-bell"></i>this is the last one b3on ellah</li>
+            <li><i class="fas fa-bell"></i>this is the last one brgola</li>
+            <li><i class="fas fa-bell"></i>this is the last one 3shan mfesh mkan</li>
+          </ul>
+          <div>
+            <h5>Show All Notifications</h5>
+          </div>
+        </div>
+        <div class="statistics">
+          <div id="patients" class="statBox">
+                <span class="title">Patients</span>
+                <i class="fas fa-user-injured"></i>
+                <span class="number">2,093</span>
+          </div>
+          <div id="reports" class="statBox">
+            <span class="title">Reports</span>
+                <i class="fas fa-file-alt"></i>
+                <span class="number">3,100</span>
+          </div>
+          <div id="doctors" class="statBox"></div>
+          <div id="rab3" class="statBox"></div>
+        </div>
+
+        <div class="searchAndFilter"> 
+          <button class="btn" id="filter">Filter</button>
+          <div id="overlaySearch">
+              <div id="filterCont">
+                <div class="searchLBL">
+                  <label>Status</label>
+                  <label>Modality</label>
+                  <label>Anatomy</label>
+                  <label>Date</label>
+                </div>
+                <div class="searchItem">
+                  <select class="combo" id="combo">
+                    <option>complete</option>
+                    <option>invalid</option>
+                  </select>
+                  <select class="combo" >
+                    <option>xray</option>
+                    <option>ct</option>
+                  </select>
+                  <select class="combo">
+                    <option>chest</option>
+                    <option>stomach</option>
+                  </select>
+                  <div>
+                  <label>from :</label>
+                  <input type="Date" value="2020-01-01">
+                  <label>to :</label>
+                  <input type="Date" value="2020-01-01">
+                  </div>
+                </div>
+                <button class="btn" id="filterBtn" onclick="offFilter()"> Submit </button>
+              </div>
+          </div>
+        </div>
+        <table id="studiesTable">
+          <thead>
+            <tr> <th colspan="8" id="title"><span id="category">All Studies</span><span id="count-display">-</span> 
+              <div class="searchContainer"> <input type="text" placeholder="Enter Search Text" id="searchBar"> <i class="fas fa-search"></i></div>
+             </th> </tr>
+              <tr id="headers">
+                      <th style="width: 10%;">Patient ID</th>
+                      <th style="width: 30%;">Patient Name</th>
+                      <th style="width: 5%;">Gender</th>
+                      <th style="width: 10%;">Modality</th>
+                      <th style="width: 10%;">Anatomy</th>
+                      <th style="width: 10%;">Status</th>
+                      <th style="width: 15%;">Date</th>
+                      <th style="width: 10%;">Report</th>
+                </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>112</td>
+              <td>Omar</td>
+              <td>Male</td>
+              <td>54</td>
+              <td>Chest</td>
+              <td class="status">Completed</td>
+              <td>--</td>
+              <td>download report</td>
+            </tr>
+            <tr>
+              <td>113</td>
+              <td>Amr</td>
+              <td>Male</td>
+              <td>30</td>
+              <td>Head</td>
+              <td class="status">Uploading</td>
+              <td>--</td>
+              <td>No report Available</td>
+            </tr>
+            <tr>
+              <td>114</td>
+              <td>Nadia</td>
+              <td>Female</td>
+              <td>25</td>
+              <td>Chest</td>
+              <td class="status">inProgress</td>
+              <td>--</td>
+              <td>No Report Available</td>
+            </tr>
+            <tr>
+              <td>115</td>
+              <td>Noha</td>
+              <td>Female</td>
+              <td>38</td>
+              <td>Stomach</td>
+              <td class="status">Invalid</td>
+              <td>--</td>
+              <td>Mo Report Available</td>
+            </tr>
+           </tr>
+           <tr>
+            <td>112</td>
+            <td>Omar khaled</td>
+            <td>Male</td>
+            <td>54</td>
+            <td>Chest</td>
+            <td class="status">Completed</td>
+            <td>--</td>
+            <td>download report</td>
+          </tr>
+          <tr>
+            <td>113</td>
+            <td>Amr</td>
+            <td>Male</td>
+            <td>30</td>
+            <td>Head</td>
+            <td class="status">Completed</td>
+            <td>--</td>
+            <td>download report</td>
+          </tr>
+          <tr>
+            <td>114</td>
+            <td>Nadia</td>
+            <td>Female</td>
+            <td>25</td>
+            <td>Chest</td>
+            <td class="status">Invalid</td>
+            <td>--</td>
+            <td>No Report Available</td>
+          </tr>
+          <tr>
+            <td>115</td>
+            <td>Noha</td>
+            <td>Female</td>
+            <td>38</td>
+            <td>Stomach</td>
+            <td class="status">Invalid</td>
+            <td>--</td>
+            <td>Mo Report Available</td>
+          </tr>
+         </tr>
+         <tr>
+          <td>112</td>
+          <td>Omar Kamal</td>
+          <td>Male</td>
+          <td>54</td>
+          <td>Chest</td>
+          <td class="status">Completed</td>
+          <td>--</td>
+          <td>download report</td>
+        </tr>
+        <tr>
+          <td>113</td>
+          <td>Amr</td>
+          <td>Male</td>
+          <td>30</td>
+          <td>Head</td>
+          <td class="status">Uploading</td>
+          <td>--</td>
+          <td>No report Available</td>
+        </tr>
+        <tr>
+          <td>114</td>
+          <td>Nadia</td>
+          <td>Female</td>
+          <td>25</td>
+          <td>Chest</td>
+          <td class="status">inProgress</td>
+          <td>--</td>
+          <td>No Report Available</td>
+        </tr>
+        <tr>
+          <td>115</td>
+          <td>Noha</td>
+          <td>Female</td>
+          <td>38</td>
+          <td>Stomach</td>
+          <td class="status">Invalid</td>
+          <td>--</td>
+          <td>Mo Report Available</td>
+        </tr>
+       </tr>
+          </tbody>
+        </table>
+        <div class="warning">
+          <p><strong>Oops !</strong> No results found</p>
+        </div>
+        <div id="snackbar"> Downloading report</div>
+        
+        <div id="overlay">
+
+          <div id="text">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>No Report Available<br> try Again Later</span>
+            <button class="btn" onclick="off()"> Okay</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="\assets\js\script.js"></script>
+  </body>
+</html>
